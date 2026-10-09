@@ -414,11 +414,11 @@ BEGIN
     INSERT INTO profiles (user_id, legajo, name, dni, sector, position, email)
     VALUES (
         NEW.id,
-        COALESCE(NEW.raw_user_meta_data->>'legajo', 'PENDING'),
-        COALESCE(NEW.raw_user_meta_data->>'name', 'Nuevo Usuario'),
+        COALESCE(NEW.raw_user_meta_data->>'legajo', 'LEG-' || substr(replace(NEW.id::text, '-', ''), 1, 8)),
+        COALESCE(NEW.raw_user_meta_data->>'name', split_part(NEW.email, '@', 1)),
         COALESCE(NEW.raw_user_meta_data->>'dni', '00.000.000'),
-        COALESCE(NEW.raw_user_meta_data->>'sector', 'Sin asignar'),
-        COALESCE(NEW.raw_user_meta_data->>'position', 'Sin asignar'),
+        COALESCE(NEW.raw_user_meta_data->>'sector', 'Operaciones'),
+        COALESCE(NEW.raw_user_meta_data->>'position', 'Operario'),
         NEW.email
     );
     RETURN NEW;
