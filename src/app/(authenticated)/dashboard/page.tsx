@@ -1,6 +1,7 @@
 'use client'
 
 import { useAuth } from '@/lib/hooks'
+import { useRoleView } from '@/lib/role-context'
 import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import StatCard from '@/components/ui/StatCard'
@@ -13,6 +14,7 @@ import type { BiometricEvent, OvertimeRequest, StandbyDuty, Profile } from '@/li
 
 export default function DashboardPage() {
   const { profile } = useAuth()
+  const { activeRole } = useRoleView()
   const supabase = createClient()
   const [events, setEvents] = useState<BiometricEvent[]>([])
   const [overtimeRequests, setOvertimeRequests] = useState<OvertimeRequest[]>([])
@@ -56,7 +58,7 @@ export default function DashboardPage() {
 
     if (sbData) setStandbyDuties(sbData)
 
-    // If supervisor, load team
+    // If supervisor or admin, load team/profiles
     if (profile.role === 'SUPERVISOR') {
       const { data: teamData } = await supabase
         .from('profiles')
@@ -87,12 +89,13 @@ export default function DashboardPage() {
     )
   }
 
+  const displayRole = profile.role === 'ADMIN' ? activeRole : profile.role
   const todayEntry = events.find(e => e.type === 'INGRESO')
   const pendingOT = overtimeRequests.filter(ot => ot.status === 'PENDIENTE SUPERVISOR').length
   const nextStandby = standbyDuties[0]
 
   // Employee Dashboard
-  if (profile.role === 'EMPLOYEE') {
+  if (displayRole === 'EMPLOYEE') {
     return (
       <div className="space-y-6 max-w-5xl mx-auto">
         <div className="bg-gradient-to-r from-emerald-950 via-slate-900 to-slate-900 border border-emerald-500/30 rounded-3xl p-6 shadow-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
@@ -165,7 +168,7 @@ export default function DashboardPage() {
   }
 
   // Supervisor Dashboard
-  if (profile.role === 'SUPERVISOR') {
+  if (displayRole === 'SUPERVISOR') {
     return (
       <div className="space-y-6 max-w-6xl mx-auto">
         <div>
@@ -214,7 +217,7 @@ export default function DashboardPage() {
   }
 
   // HR Dashboard
-  if (profile.role === 'HR') {
+  if (displayRole === 'HR') {
     return (
       <div className="space-y-6 max-w-6xl mx-auto">
         <div className="flex justify-between items-center">
