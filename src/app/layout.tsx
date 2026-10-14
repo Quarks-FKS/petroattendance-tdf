@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'PEERS - Control de Asistencia y Jornadas',
   description: 'PEERS - Plataforma Integral de Control de Asistencia, Jornadas y Recursos Humanos',
   icons: {
-    icon: '/peers-logo.jpg',
+    icon: '/peers-logo.png',
   },
 }
 

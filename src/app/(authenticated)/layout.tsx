@@ -54,9 +54,9 @@ function LayoutContent({ children }: { children: ReactNode }) {
     return (
       <div className="min-h-screen bg-slate-900 flex items-center justify-center">
         <div className="text-center flex flex-col items-center">
-          <div className="w-14 h-14 rounded-2xl overflow-hidden shadow-lg border border-slate-700 bg-white p-1 mb-3">
+          <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg border border-slate-700 bg-white p-1 mb-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/peers-logo.jpg" alt="PEERS" className="w-full h-full object-contain rounded-xl" />
+            <img src="/peers-logo.png" alt="PEERS" className="w-full h-full object-contain rounded-xl" />
           </div>
           <span className="tracking-wider text-lg font-bold text-white">PEERS</span>
           <p className="text-slate-400 text-xs animate-pulse mt-1">Cargando sistema...</p>
@@ -96,9 +96,9 @@ function LayoutContent({ children }: { children: ReactNode }) {
         <div className="p-4 border-b border-slate-800">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2.5">
-              <div className="w-9 h-9 rounded-xl overflow-hidden bg-white p-0.5 border border-slate-700/60 shadow flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-xl overflow-hidden bg-white p-1 border border-slate-700/60 shadow flex items-center justify-center shrink-0">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/peers-logo.jpg" alt="PEERS Logo" className="w-full h-full object-contain rounded-lg" />
+                <img src="/peers-logo.png" alt="PEERS Logo" className="w-full h-full object-contain" />
               </div>
               <div className="flex flex-col">
                 <span className="tracking-wider text-base font-extrabold text-white leading-tight">PEERS</span>

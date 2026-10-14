@@ -36,14 +36,18 @@ export default function LoginPage() {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8 flex flex-col items-center">
-          <div className="w-20 h-20 rounded-2xl overflow-hidden shadow-2xl shadow-emerald-950/60 border border-slate-700/80 mb-3 bg-white p-1 flex items-center justify-center">
+          <div className="w-56 sm:w-64 bg-white/95 rounded-3xl p-5 shadow-2xl shadow-emerald-950/60 border border-emerald-500/20 mb-4 flex items-center justify-center transition-all duration-300 hover:shadow-emerald-500/20 hover:scale-[1.02]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/peers-logo.jpg" alt="PEERS Logo" className="w-full h-full object-contain rounded-xl" />
+            <img 
+              src="/peers-logo.png" 
+              alt="PEERS Logo" 
+              className="w-full h-auto max-h-36 object-contain" 
+            />
           </div>
-          <h1 className="text-3xl font-extrabold tracking-wider text-white">PEERS</h1>
-          <p className="text-sm text-slate-400 mt-1">Sistema Integral de Control de Asistencia y Jornadas</p>
-          <span className="text-xs px-3 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full font-medium mt-2 inline-block">
-            Operaciones Tierra del Fuego
+          <h1 className="text-2xl font-bold tracking-tight text-white mt-1">Control de Asistencia y Jornadas</h1>
+          <p className="text-xs text-slate-400 mt-1">Plataforma Operativa de Personal • Oil & Gas</p>
+          <span className="text-[11px] px-3 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full font-medium mt-2.5 inline-block">
+            Yacimiento San Sebastián • Tierra del Fuego
           </span>
         </div>
 
