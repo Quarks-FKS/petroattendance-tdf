@@ -2,8 +2,11 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'PetroAttendance TDF - Control de Asistencia',
-  description: 'Sistema Integral de Control de Asistencia y Jornadas - Operación Oil & Gas Tierra del Fuego',
+  title: 'PEERS - Control de Asistencia y Jornadas',
+  description: 'PEERS - Plataforma Integral de Control de Asistencia, Jornadas y Recursos Humanos',
+  icons: {
+    icon: '/peers-logo.jpg',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

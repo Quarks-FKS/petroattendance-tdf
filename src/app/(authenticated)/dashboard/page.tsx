@@ -100,7 +100,7 @@ export default function DashboardPage() {
       <div className="space-y-6 max-w-5xl mx-auto">
         <div className="bg-gradient-to-r from-emerald-950 via-slate-900 to-slate-900 border border-emerald-500/30 rounded-3xl p-6 shadow-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">Portal del Empleado • Operación Tierra del Fuego</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">PEERS • Portal del Empleado • Operación Tierra del Fuego</span>
             <h1 className="text-2xl font-bold text-white mt-1">Bienvenido, {profile.name}</h1>
             <p className="text-xs text-slate-400 mt-0.5">Legajo {profile.legajo} • {profile.position} • {profile.worksite}</p>
           </div>

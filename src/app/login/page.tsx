@@ -35,14 +35,16 @@ export default function LoginPage() {
     <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Logo */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center bg-emerald-600 text-white px-4 py-2 rounded-xl font-bold shadow-lg shadow-emerald-900/30 mb-4">
-            <ShieldCheck className="w-6 h-6 mr-2" />
-            <span className="tracking-wider">PETROATTENDANCE TDF</span>
+        <div className="text-center mb-8 flex flex-col items-center">
+          <div className="w-20 h-20 rounded-2xl overflow-hidden shadow-2xl shadow-emerald-950/60 border border-slate-700/80 mb-3 bg-white p-1 flex items-center justify-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/peers-logo.jpg" alt="PEERS Logo" className="w-full h-full object-contain rounded-xl" />
           </div>
-          <h1 className="text-2xl font-bold text-white mt-4">Iniciar Sesión</h1>
-          <p className="text-sm text-slate-400 mt-1">Sistema de Control de Asistencia y Jornadas</p>
-          <p className="text-xs text-amber-400/80 mt-2">Yacimiento San Sebastián • Tierra del Fuego</p>
+          <h1 className="text-3xl font-extrabold tracking-wider text-white">PEERS</h1>
+          <p className="text-sm text-slate-400 mt-1">Sistema Integral de Control de Asistencia y Jornadas</p>
+          <span className="text-xs px-3 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full font-medium mt-2 inline-block">
+            Operaciones Tierra del Fuego
+          </span>
         </div>
 
         {/* Form */}

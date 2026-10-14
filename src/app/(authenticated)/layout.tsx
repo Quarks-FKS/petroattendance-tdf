@@ -53,12 +53,13 @@ function LayoutContent({ children }: { children: ReactNode }) {
   if (loading) {
     return (
       <div className="min-h-screen bg-slate-900 flex items-center justify-center">
-        <div className="text-center">
-          <div className="inline-flex items-center bg-emerald-600 text-white px-4 py-2 rounded-xl font-bold shadow-lg mb-4">
-            <ShieldCheck className="w-6 h-6 mr-2" />
-            <span className="tracking-wider">PETROATTENDANCE TDF</span>
+        <div className="text-center flex flex-col items-center">
+          <div className="w-14 h-14 rounded-2xl overflow-hidden shadow-lg border border-slate-700 bg-white p-1 mb-3">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/peers-logo.jpg" alt="PEERS" className="w-full h-full object-contain rounded-xl" />
           </div>
-          <p className="text-slate-400 text-sm animate-pulse">Cargando sistema...</p>
+          <span className="tracking-wider text-lg font-bold text-white">PEERS</span>
+          <p className="text-slate-400 text-xs animate-pulse mt-1">Cargando sistema...</p>
         </div>
       </div>
     )
@@ -94,15 +95,21 @@ function LayoutContent({ children }: { children: ReactNode }) {
         {/* Logo */}
         <div className="p-4 border-b border-slate-800">
           <div className="flex items-center justify-between">
-            <div className="flex items-center bg-emerald-600 text-white px-3 py-1.5 rounded-lg font-bold shadow-lg shadow-emerald-900/30">
-              <ShieldCheck className="w-4 h-4 mr-1.5" />
-              <span className="tracking-wider text-sm">PETROATTENDANCE</span>
+            <div className="flex items-center space-x-2.5">
+              <div className="w-9 h-9 rounded-xl overflow-hidden bg-white p-0.5 border border-slate-700/60 shadow flex items-center justify-center shrink-0">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/peers-logo.jpg" alt="PEERS Logo" className="w-full h-full object-contain rounded-lg" />
+              </div>
+              <div className="flex flex-col">
+                <span className="tracking-wider text-base font-extrabold text-white leading-tight">PEERS</span>
+                <span className="text-[10px] text-emerald-400 font-medium">Workforce TDF</span>
+              </div>
             </div>
             <button onClick={() => setSidebarOpen(false)} className="lg:hidden text-slate-400 hover:text-white">
               <X className="w-5 h-5" />
             </button>
           </div>
-          <p className="text-[10px] text-amber-400/80 mt-2">Yacimiento San Sebastián • TDF</p>
+          <p className="text-[10px] text-slate-500 mt-2">Yacimiento San Sebastián • TDF</p>
         </div>
 
         {/* Navigation */}

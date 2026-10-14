@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PEERS - Sistema Integral de Control de Asistencia y Jornadas
 
-## Getting Started
+<p align="center">
+  <img src="public/peers-logo.jpg" alt="PEERS Logo" width="160" style="border-radius: 16px;" />
+</p>
 
-First, run the development server:
+Plataforma operativa para la gestión integral de asistencia, fichadas biométricas, horas extra, guardias y preliquidación de sueldos para operaciones de Oil & Gas en Tierra del Fuego.
 
+## 🚀 Tecnologías
+
+- **Frontend:** Next.js (App Router), React, Tailwind CSS, Lucide Icons
+- **Backend & Base de Datos:** Supabase (PostgreSQL, Supabase Auth, Row Level Security)
+- **Despliegue:** Vercel (CI/CD automático desde GitHub)
+
+## 👥 Módulos por Rol
+
+- **Operario / Empleado:** Registro de jornada, fichadas biométricas, solicitud de horas extra, corrección de inconsistencias y tickets de RRHH.
+- **Supervisor de Turno:** Gestión de personal en yacimiento, aprobación de horas extra y novedades, cronograma de guardias operativas (pasiva/activa/emergencia).
+- **Recursos Humanos:** Tablero operativo de ausencias e inconsistencias, validación de horas extra y generación de datasets de preliquidación para payroll (exportable a Excel/CSV).
+- **Administrador:** Estado de lectores biométricos, simulación de fichadas en tiempo real, configuración de convenios y audit logs de seguridad.
+
+## 🛠️ Ejecución Local
+
+1. Instalar dependencias:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Configurar variables en `.env.local`:
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://ripoqygpofkhxzrticvc.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=tu-anon-key
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Iniciar el servidor:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Abrir [http://localhost:3000](http://localhost:3000) en el navegador.
